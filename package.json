@@ -19,8 +19,7 @@
     },
     "client": {
       "inject": [
-        "@deepseek-ai/dsh-client-runtime",
-        "dsh-better-sidebar/client"
+        "@deepseek-ai/dsh-client-runtime"
       ],
       "platform": "web"
     }
