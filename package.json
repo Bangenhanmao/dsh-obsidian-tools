@@ -1,7 +1,7 @@
 {
   "name": "dsh-obsidian-tools",
-  "description": "Obsidian vault tools for DeepSeek Harness: search / read / write / append notes in a local vault (default D:\\obsidian仓库), with AI-TAG header preservation.",
-  "version": "0.1.0",
+  "description": "Obsidian vault tools for DeepSeek Harness: search / read / write / append notes in a local vault (default D:\\obsidian仓库), with AI-TAG header preservation and a better-sidebar Obsidian tab.",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "main": "lib/index.js",
@@ -9,20 +9,31 @@
     ".": {
       "default": "./lib/index.js"
     },
+    "./client": "./lib/client.js",
     "./cordis.patch.yml": "./cordis.patch.yml",
     "./package.json": "./package.json"
   },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "dsh-better-sidebar/client"
+      ],
+      "platform": "web"
     }
   },
   "dependencies": {
-    "@deepseek-ai/schemastery": "^3.18.1"
+    "@deepseek-ai/schemastery": "^3.18.1",
+    "marked": "^18.0.9"
   },
   "peerDependencies": {
+    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6",
     "cordis": "^4.0.1",
-    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6"
+    "dsh-better-sidebar": "*",
+    "react": "^18.2.0"
   },
   "license": "MIT"
 }
