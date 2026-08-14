@@ -1,0 +1,4 @@
+# dsh-obsidian-tools bundle: register the host-side tools plugin.
+- insert:
+    - id: obsidian-tools
+      name: 'dsh-obsidian-tools'
